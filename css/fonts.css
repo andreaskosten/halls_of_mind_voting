@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'futuraLight';
+    src: url(../fonts/FuturaPTLight.woff) format('woff');
+}
+@font-face {
+    font-family: 'futuraBook';
+    src: url(../fonts/FuturaPTBook.woff) format('woff');
+}
+@font-face {
+    font-family: 'futuraMedium';
+    src: url(../fonts/FuturaPTMedium.woff) format('woff');
+}
+@font-face {
+    font-family: 'futuraDemi';
+    src: url(../fonts/FuturaPTDemi.woff) format('woff');
+}
+@font-face {
+    font-family: 'futuraHeavy';
+    src: url(../fonts/FuturaPTHeavy.woff) format('woff');
+}
+@font-face {
+    font-family: 'futuraBold';
+    src: url(../fonts/FuturaPTBold.woff) format('woff');
+}
+@font-face {
+    font-family: 'futuraExtraBold';
+    src: url(../fonts/FuturaPTExtraBold.woff) format('woff');
+}
+
+.futuraLight { font-family: 'futuraLight'; }
+.futuraBook { font-family: 'futuraBook'; }
+.futuraMedium { font-family: 'futuraMedium'; }
+.futuraDemi { font-family: 'futuraDemi'; }
+.futuraHeavy { font-family: 'futuraHeavy'; }
+.futuraBold { font-family: 'futuraBold'; }
+.futuraExtraBold { font-family: 'futuraExtraBold'; }
