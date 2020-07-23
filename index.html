@@ -245,7 +245,7 @@
             		
             	    
             	    <!-- кнопка подсчёта и дополнительные тексты -->
-            	    <div style='margin: 60px 0px 0px 0px'>
+            	    <div id='div_prelast' class='' style='margin: 60px 0px 0px 0px'>
             	        <p id='txt_contradictions_detected' class='hidden'>Есть элементы, по обоим вопросам которых даны ответы "да" (выделены <b style='color: #f4a60b'>жёлтым</b>).<br>
             	        Необходимо в конечном итоге ответить иначе, чтобы получить доступ к результатам голосования.</p>
             	        
@@ -428,8 +428,12 @@
         	        $( '#btn_plv_answer_q2_yes' ).addClass('btn_long_voting').removeClass('btn_long_voting_done');
         	        $( '#btn_plv_answer_q2_no' ).addClass('btn_long_voting').removeClass('btn_long_voting_done');
     	        
-    	        $('#btn_end_plv').css('visibility', 'hidden');
-    	        $('#div_panel_long_voting').css('display', 'block');
+    	        // сменить видимость элементов:
+        	        $('#btn_end_plv').css('visibility', 'hidden');
+        	        $('#div_panel_long_voting').css('display', 'block');
+        	        $('#div_prelast').addClass('hidden');
+    	        
+    	        scroll_page_down();
     	    }
     	    else{
     	        console.warn('".element_background" clicked, but voting_format is NOT long.');
@@ -563,6 +567,8 @@
     	    $('#div_panel_long_voting').css('display', 'none');
     	    $('#div_panel_long_voting').attr('answer_1', 'not_provided');
     	    $('#div_panel_long_voting').attr('answer_2', 'not_provided');
+    	    
+    	    $('#div_prelast').removeClass('hidden');
     	    
     	    // проверить, все ли проголосовали:
             if_every_element_voted();
