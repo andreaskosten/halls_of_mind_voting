@@ -1,36 +1,26 @@
 @font-face {
-    font-family: 'futuraLight';
-    src: url(../fonts/FuturaPTLight.woff) format('woff');
+    font-family: 'font_light';
+    src: url(../fonts/gilroy_light.woff) format('woff');
 }
-@font-face {
-    font-family: 'futuraBook';
-    src: url(../fonts/FuturaPTBook.woff) format('woff');
-}
-@font-face {
-    font-family: 'futuraMedium';
-    src: url(../fonts/FuturaPTMedium.woff) format('woff');
-}
-@font-face {
-    font-family: 'futuraDemi';
-    src: url(../fonts/FuturaPTDemi.woff) format('woff');
-}
-@font-face {
-    font-family: 'futuraHeavy';
-    src: url(../fonts/FuturaPTHeavy.woff) format('woff');
-}
-@font-face {
-    font-family: 'futuraBold';
-    src: url(../fonts/FuturaPTBold.woff) format('woff');
-}
-@font-face {
-    font-family: 'futuraExtraBold';
-    src: url(../fonts/FuturaPTExtraBold.woff) format('woff');
-}
+.font_light { font-family: 'font_light'; }
 
-.futuraLight { font-family: 'futuraLight'; }
-.futuraBook { font-family: 'futuraBook'; }
-.futuraMedium { font-family: 'futuraMedium'; }
-.futuraDemi { font-family: 'futuraDemi'; }
-.futuraHeavy { font-family: 'futuraHeavy'; }
-.futuraBold { font-family: 'futuraBold'; }
-.futuraExtraBold { font-family: 'futuraExtraBold'; }
+
+@font-face {
+    font-family: 'font_normal';
+    src: url(../fonts/gilroy_regular.woff) format('woff');
+}
+.font_normal { font-family: 'font_normal'; }
+
+
+@font-face {
+    font-family: 'font_semibold';
+    src: url(../fonts/gilroy_semibold.woff) format('woff');
+}
+.font_semibold { font-family: 'font_semibold'; }
+
+
+@font-face {
+    font-family: 'font_bold';
+    src: url(../fonts/gilroy_bold.woff) format('woff');
+}
+.font_bold { font-family: 'font_bold'; }
