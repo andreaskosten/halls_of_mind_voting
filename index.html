@@ -5,8 +5,8 @@
     <link rel='shortcut icon' href='logo.png'>
     <meta http-equiv='Cache-Control' content='private' charset='utf-8'>
     
-    <link rel='stylesheet' type='text/css' href='css/main.css?12'>
-    <link rel='stylesheet' type='text/css' href='css/fonts.css?12'>
+    <link rel='stylesheet' type='text/css' href='css/main.css?0723'>
+    <link rel='stylesheet' type='text/css' href='css/fonts.css?0723'>
     
     <script type='text/javascript' src='jquery-3.5.0.min.js'></script>
 </head>
@@ -15,14 +15,53 @@
 
 <body>
     
-    <div id='div_main_scene' style='margin-bottom: 100px' align='center'>
+    <style>
+    
+    /* CSS Grid */
+    body { 
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "article article article"
+        "footer footer footer";
+        grid-template-rows: 120px 1fr 60px;
+        grid-template-columns: 32px 1fr;
+        grid-gap: 0px;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    header, footer, article {
+        padding: 20px;
+    }
+    
+    #pageHeader {
+        grid-area: header;
+        background-color: #444444;
+    }
+    
+    #pageFooter {
+        grid-area: footer;
+        background-color: #444444;
+        padding: 30px 20px 40px 20px;
+    }
+    
+    #pageCore {
+        grid-area: article;
+        background-color: #ffffff;
+    }
+    
+    </style>
+    
+    
+    <div id='pageHeader' style='padding: 32px 20px 32px 64px'>
+        <p class='font_bold texts_light' style='font-size: 1.6em; margin-bottom: 8px'>Чертоги Разума (модель "Голосование")</p>
+        <p class='font_light texts_light'>developed by <a class='link_common' href='https://andreaskostenko.space'>andreaskostenko</a>, <a class='link_common' href='https://github.com/andreaskosten/halls_of_mind_voting'>see on Github</a></p>
+    </div>
+    
+    
+    <div id='pageCore' style='margin-bottom: 100px' align='center'>
     	<div style='display: block; width: 100%' align='center'>
-            
-            <div style='margin: 32px 0px 0px 64px' align='left'>
-                <p class='futuraDemi' style='color: #222f3e; font-size: 1.2em'>Чертоги Разума (модель "Голосование")</p>
-                <p class='futuraLight' style='color: #576574'>developed by <a class='link_common' href='https://andreaskostenko.space'>andreaskostenko</a>, <a class='link_common' href='https://github.com/andreaskosten/halls_of_mind_voting'>see on Github</a></p>
-                <p class='futuraLight' style='color: #576574'>images were taken from <a class='link_common' href='https://ru.wowhead.com'>wowhead.com</a></p>
-            </div>
             
             <div style='margin: 32px 0px 32px 64px' align='left'>
                 <a class='buttons_with_text anim_mouseover' id='btn_show_info' onclick='$("#div_info").removeClass("hidden"); $(this).addClass("hidden");'>узнать больше</a>
@@ -212,12 +251,12 @@
             	    <!-- панель развёрнутого голосования -->
             	    <div id='div_panel_long_voting' class='canonic_border' style='display: none; margin-top: 12px; width: 640px; background-color: #333; z-index: 30'>
             	        <div style='position: relative'>
-            		        <span class='mo_bright' id='btn_close_plv' style='position: absolute; cursor: pointer; right: 2px; color: #555; font-family: "futuraDemi"'>[x]</span>
+            		        <span class='mo_bright' id='btn_close_plv' style='position: absolute; cursor: pointer; right: 2px; color: #555; font-family: "font_semibold"'>[x]</span>
             		        
             		        <div style='padding-top: 20px'>
                 		        <div style='display: flex; flex-direction: row; justify-content: center; align-items: center;'>
                 		            <div style='margin-right: 24px'><img id='img_of_element_voting' class='canonic_border no_select' style='width: 32px'></div>
-                		            <div><p id='txt_title_of_element_voting' style='color: #fafafa; font-family: "futuraDemi"; margin: 0px; padding: 0px'></p></div>
+                		            <div><p id='txt_title_of_element_voting' style='color: #fafafa; font-family: "font_semibold"; margin: 0px; padding: 0px'></p></div>
                 		        </div>
             		        </div>
             		        
@@ -240,7 +279,7 @@
             	    
             	    <!-- подсказка о названиях элементов -->
             	    <div style='position: absolute; width: 256px; left: calc(50% - 128px); top: 220px'>
-            			<p id='tip_element_name' style='color: #444444; font-size: 1.4em; text-align: center; font-family: "futuraBold"'></p>
+            			<p id='tip_element_name' style='color: #444444; font-size: 1.4em; text-align: center; font-family: "font_bold"'></p>
             		</div>
             		
             	    
@@ -255,13 +294,18 @@
             	    
             	    <!-- панель с результатами -->
             	    <div id='div_voting_results' class='hidden canonic_border' style='margin: 24px 32px 100px 32px; padding: 18px 0px 18px 0px'>
-                        <div id='voting_results' style='color: #444444; text-align: left; padding: 12px 24px 12px 24px; font-family: "futuraBook"'></div>
+                        <div id='voting_results' style='color: #444444; text-align: left; padding: 12px 24px 12px 24px; font-family: "font_normal"'></div>
                     </div>
             	</div>
             </div>
     	</div>
     </div>
     
+    
+    <div id='pageFooter' style='padding: 40px 20px 60px 20px' align='center'>
+        
+        <p class='texts_light font_light'>images were taken from <a class='link_common' href='https://ru.wowhead.com'>wowhead.com</a></p>
+    </div>
     
     
     <script>
@@ -328,8 +372,6 @@
         		    $('#var_answer_2').text('none');
                 
                 $('#var_current_procedure').text('voting');
-                    
-                $('#div_footer').css('margin-top', '200px');
             }
             
             // иначе, если голосование идёт:
@@ -351,8 +393,6 @@
                 $('#var_current_procedure').text('none');
                 
                 $(this).text('начать голосование');
-                
-                $('#div_footer').css('margin-top', '400px');
             }
         });
         
@@ -395,7 +435,7 @@
         
         // функция - показать вопросы элемента для формирования позиции:   
         function show_voting_questions(elem_id){
-                        console.log('f "show_voting_questions" called with param "elem_id" = ' + elem_id );
+                        //console.log('f "show_voting_questions" called with param "elem_id" = ' + elem_id );
             
     	    $('#var_who_is_voting_now').text( 'elem_' + elem_id );
     	    
@@ -684,17 +724,17 @@
             // вердикт:
                 // если голосов "ЗА" больше, чем голосов "ПРОТИВ":
                 if( cnt_ye > cnt_no ){
-                    verdict = `<tr><td>Голосов "за" больше, чем голосов "против".<br>Итак, решение допускается.</td></tr>`;
+                    verdict = `<tr><td>Голосов "за" больше, чем голосов "против".<br><br>Итак, решение допускается.</td></tr>`;
                 }
                 
                 // если голосов "ЗА" меньше, чем голосов "ПРОТИВ":
                 if( cnt_ye < cnt_no ){
-                    verdict = `<tr><td>Голосов "за" меньше, чем голосов "против".<br>Итак, решение не допускается.</td></tr>`;
+                    verdict = `<tr><td>Голосов "за" меньше, чем голосов "против".<br><br>Итак, решение <span class='font_semibold'>не</span> допускается.</td></tr>`;
                 }
                 
                 // если голосов "ЗА" столько же, сколько и голосов "ПРОТИВ":
                 if( cnt_ye == cnt_no ){
-                    verdict = `<tr><td>Голосов "за" столько же, сколько и голосов "против".<br>Итак, решение не допускается.</td></tr>`;
+                    verdict = `<tr><td>Голосов "за" столько же, сколько и голосов "против".<br><br>Итак, решение <span class='font_semibold'>не</span> допускается.</td></tr>`;
                 }
                 
                 whole_text = whole_text + '<tr><td style="padding-bottom: 24px"></td></tr>' + verdict;
