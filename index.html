@@ -5,7 +5,7 @@
     <link rel='shortcut icon' href='logo.png'>
     <meta http-equiv='Cache-Control' content='private' charset='utf-8'>
     
-    <link rel='stylesheet' type='text/css' href='css/main.css?0724'>
+    <link rel='stylesheet' type='text/css' href='css/main.css?0728'>
     <link rel='stylesheet' type='text/css' href='css/fonts.css?0723'>
     
     <script type='text/javascript' src='jquery-3.5.0.min.js'></script>
@@ -55,8 +55,19 @@
     
     
     <div id='pageHeader' style='padding: 32px 20px 32px 64px'>
-        <p class='font_bold texts_light' style='font-size: 1.6em; margin-bottom: 8px'>Чертоги Разума (модель "Голосование")</p>
-        <p class='font_light texts_light'>developed by <a class='link_common' href='https://andreaskostenko.space'>andreaskostenko</a>, <a class='link_common' href='https://github.com/andreaskosten/halls_of_mind_voting'>see on Github</a></p>
+        <div style='display: flex; flex-direction: row; justify-content: space-between; align-items: stretch;'>
+            <div>
+                <p class='font_bold texts_light trs' style='font-size: 1.6em; margin-bottom: 8px' l_ua='Чертоги Розуму (модель "Голосування")' l_en='Halls of Mind (model "Voting")'>Чертоги Разума (модель "Голосование")</p>
+                <p class='font_light texts_light'>developed by <a class='link_common' href='https://andreaskostenko.space'>andreaskostenko</a>, <a class='link_common' href='https://github.com/andreaskosten/halls_of_mind_voting'>see on Github</a></p>
+            </div>
+            
+            <div>
+                <span class='btns_language btns_language_0' to_lang='l_en'>EN</span>
+                <span class='btns_language btns_language_0' to_lang='l_ua'>UA</span>
+                <span class='btns_language btns_language_1' to_lang='l_ru'>RU</span>
+                <span id='var_language' class='hidden'>ru</span>
+            </div>
+        </div>
     </div>
     
     
@@ -64,32 +75,49 @@
     	<div style='display: block; width: 100%' align='center'>
             
             <div style='margin: 32px 0px 32px 64px' align='left'>
-                <span class='btn_simple btn_simple_available' id='btn_show_info' onclick='$("#div_info").removeClass("hidden"); $(this).addClass("hidden");'>узнать больше</span>
+                <span class='btn_simple btn_simple_available trs' id='btn_show_info' onclick='$("#div_info").removeClass("hidden"); $(this).addClass("hidden");' 
+                l_ua='дізнатися більше' l_en='learn more'>узнать больше</span>
             </div>
             
             <div id='div_info' class='hidden' style='margin: 12px 64px 12px 64px; background-color: #fafafa; padding: 18px;' align='left'>
                 
-                <p class='text_info'>Это демонстрация моей методики взвешенного принятия Решений.</p>
-                <p class='text_info'>Она базируется на неких основных ценностях (Элементы-Критерии), которыми я руководствуюсь.</p>
+                <p class='text_info trs'
+                l_ua='Це демонстрація моєї методики зваженого прийняття Рішень.'
+                l_en='There is demo of my technique of balanced decision making.'>Это демонстрация моей методики взвешенного принятия Решений.</p>
                 
-                <p class='text_info' style='margin-top: 12px'>Вот порядок действий по этой методологии:</p>
-                <p class='text_info'>1. Cформулировать беспокоящий вопрос, например: "Стоит ли мне полностью отказаться от употребления алкоголя?".</p>
-                <p class='text_info'>2. Превратить этот вопрос в проект Решения: "Я собираюсь полностью отказаться от употребления алкоголя".</p>
-                <p class='text_info'>3. Начать голосование, ответив на вопросы Элементов-Критериев насчёт этого Решения.</p>
-                <p class='text_info'>4. Получить расчёт результатов голосования, который базируется на простом принципе соотношения количеств голосов "за" и голосов "против".</p>
+                <p class='text_info trs'
+                l_ua='Вона базується на деяких основних цінностях (Елементи-Критерії), якими я керуюся.'
+                l_en='It is based on some main values (Elements-Criteria), that I bring.'>Она базируется на неких основных ценностях (Элементы-Критерии), которыми я руководствуюсь.</p>
+                
+                <p class='text_info trs' style='margin-top: 12px'
+                l_ua='Ось порядок дій за цією методикою:'
+                l_en='There is course of actions under this technique:'>Вот порядок действий по этой методике:</p>
+                <p class='text_info trs'
+                l_ua='1. Сформулювати питання, що вас непокоїть, наприклад "Чи маю я цілком відмовитися від вживання алкоголю?"'
+                l_en='1. Formulate disturbing question, e.g. "Should I completely refuse consumption of alcohol?"'>1. Cформулировать беспокоящий вопрос, например: "Стоит ли мне полностью отказаться от употребления алкоголя?".</p>
+                <p class='text_info trs'
+                l_ua='2. Перетворити це питання в проект Рішення: "Я маю намір цілком відмовитися від вживання алкоголю".'
+                l_en='2. Transform this question in the project of the Decision: "I intend to completely refuse consumption of alcohol".'>2. Превратить этот вопрос в проект Решения: "Я собираюсь полностью отказаться от употребления алкоголя".</p>
+                <p class='text_info trs'
+                l_ua='3. Почати голосування і відповісти на питання Елементів-Критеріїв щодо цього Рішення.'
+                l_en='3. Begin the voting procedure and answer questions of Elements-Criteria about this Decision.'>3. Начать голосование и ответить на вопросы Элементов-Критериев насчёт этого Решения.</p>
+                <p class='text_info trs'
+                l_ua='4. Отримати розрахунок результатів голосування, який базується на простому принципі співвідношення кількостей голосів "за" і голосів "проти".'
+                l_en='4. Get results of the voting, which are based on simple principle of balance between quantities of votes "endorse" and votes "against".'>4. Получить расчёт результатов голосования, который базируется на простом принципе соотношения количеств голосов "за" и голосов "против".</p>
             </div>
             
     	    <div style='margin: 24px 0px 24px 64px' align='left'>
-                <span class='btn_simple btn_simple_available' id='btn_toggle_voting_process'>начать голосование</span>
+                <span class='btn_simple btn_simple_available btn_toggle_voting_process trs' id='btn_voting_begin' l_ua='почати голосування' l_en='begin voting'>начать голосование</span>
+                <span class='btn_simple btn_simple_available btn_toggle_voting_process trs hidden' id='btn_voting_break' l_ua='перервати голосування' l_en='break voting'>прервать голосование</span>
             </div>
             
             <div id='div_helper_voting' class='hidden' style='margin: 24px 0px 0px 64px' align='left'>
                 <div style='display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 12px'>
-                    <div><p style='margin: 0px; padding: 0px'>Чтобы голосовать, следуй за подсказкой: </p></div>
+                    <div><p class='trs' style='margin: 0px; padding: 0px' l_ua='Щоб голосувати, слідуй за підказкою' l_en='Follow tips in order to vote:'>Чтобы голосовать, следуй за подсказкой:</p></div>
                     <div><img class='no_select' style='width: 32px' src='img/tip_mouse_leftclick.png'></div>
                 </div>
                 
-                <span class='btn_simple btn_simple_available' onclick='simulate_full_voting();'>симулировать голосование всех элементов</span>
+                <span class='btn_simple btn_simple_available trs' onclick='simulate_full_voting();' l_ua='симулювати голосування всіх елементів' l_en='simulate voting of all Elements'>симулировать голосование всех элементов</span>
             </div>
             
             <div style='display: none; margin: 24px 0px 0px 64px'>
@@ -109,10 +137,14 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Health'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Health' voted='0' src='img/elements/Здоровье.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Health' voted='0' src='img/elements/Здоровье.jpg' l_ru='Здоровье' l_ua="Здоров'я" l_en='Health'>
             		            <div style='display: none'>
-            		                <span id='q1-Health'>Не создаст ли Решение угрозу / вред здоровью?</span>
-            		                <span id='q2-Health'>Поможет ли Решение укрепить здоровье?</span>
+            		                <span class='trs' id='q1-Health'
+            		                l_ua="Рішення створить загрозу / шкоду здоров'ю?"
+            		                l_en='Will the Decision endanger my health or cause harm to my health?'>Решение создаст угрозу / вред здоровью?</span>
+            		                <span class='trs' id='q2-Health'
+            		                l_ua="Рішення допоможе укріпити здоров'я?"
+            		                l_en='Will the Decision help to improve my health?'>Решение поможет укрепить здоровье?</span>
             		            </div>
             		        </div>
             		        
@@ -123,10 +155,14 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Safety'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Safety' voted='0' src='img/elements/Сохранность.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Safety' voted='0' src='img/elements/Сохранность.jpg' l_ru='Сохранность' l_ua='Безпека' l_en='Safety'>
             		            <div style='display: none'>
-            		                <span id='q1-Safety'>Не создаст ли Решение угрозу моей сохранности / безопасности?</span>
-            		                <span id='q2-Safety'>Укрепит ли Решение мою сохранность / безопасность?</span>
+            		                <span class='trs' id='q1-Safety'
+            		                l_ua='Рішення створить загрозу моїй схоронності/безпеці?'
+            		                l_en='Will the Decision endanger my safety/security?'>Решение создаст угрозу моей сохранности / безопасности?</span>
+            		                <span class='trs' id='q2-Safety'
+            		                l_ua='Рішення укріпить мою схоронність/безпеку?'
+            		                l_en='Will the Decision improve my safety/security?'>Решение укрепит мою сохранность / безопасность?</span>
             		            </div>
             		        </div>
             		        
@@ -137,10 +173,14 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Freedom'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Freedom' voted='0' src='img/elements/Свобода.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Freedom' voted='0' src='img/elements/Свобода.jpg' l_ru='Свобода' l_ua='Свобода' l_en='Freedom'>
             		            <div style='display: none'>
-            		                <span id='q1-Freedom'>Не ограничит ли Решение мою свободу, не сделает ли меня менее свободным?</span>
-            		                <span id='q2-Freedom'>Увеличит ли Решение мою свободу, сделает ли меня более свободным?</span>
+            		                <span class='trs' id='q1-Freedom'
+            		                l_ua='Рішення обмежить мою свободу, зробить мене менш вільним?'
+            		                l_en='Will the Decision restrict my freedom, make me less free?'>Решение ограничит мою свободу, сделает меня менее свободным?</span>
+            		                <span class='trs' id='q2-Freedom'
+            		                l_ua='Рішення збільшить мою свободу, зробить мене більш вільним?'
+            		                l_en='Will the Decision increase my freedom, make me more free?'>Решение увеличит мою свободу, сделает меня более свободным?</span>
             		            </div>
             		        </div>
             		        
@@ -151,10 +191,14 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Advance'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Advance' voted='0' src='img/elements/Развитие.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Advance' voted='0' src='img/elements/Развитие.jpg' l_ru='Развитие' l_ua='Розвиток' l_en='Evolution'>
             		            <div style='display: none'>
-            		                <span id='q1-Advance'>Не помешает ли Решение моему развитию?</span>
-            		                <span id='q2-Advance'>Поможет ли Решение мне развиться краткосрочно или развиваться долгосрочно?</span>
+            		                <span class='trs' id='q1-Advance'
+            		                l_ua='Рішення завадить моєму розвитку?'
+            		                l_en='Will the Decision prevent my evolution?'>Решение помешает моему развитию?</span>
+            		                <span class='trs' id='q2-Advance'
+            		                l_ua='Рішення допоможе мені розвинутися короткостроково або розвиватися довгостроково?'
+            		                l_en='Will the Decision help me to evolute in short-term or long-term future?'>Решение поможет мне развиться краткосрочно или развиваться долгосрочно?</span>
             		            </div>
             		        </div>
             		        
@@ -165,10 +209,14 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Economics'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Economics' voted='0' src='img/elements/Экономика.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Economics' voted='0' src='img/elements/Экономика.jpg' l_ru='Экономика' l_ua='Економіка' l_en='Economics'>
             		            <div style='display: none'>
-            		                <span id='q1-Economics'>Не создаст ли Решение угрозу / вред моей экономике (материальному благополучию, обеспеченности)?</span>
-            		                <span id='q2-Economics'>Поможет ли Решение укрепить мою экономику (материальное благополучие, обеспеченность)?</span>
+            		                <span class='trs' id='q1-Economics'
+            		                l_ua='Рішення створить загрозу чи заподіє шкоду моїй економіці (добробуту, забезпеченості)?'
+            		                l_en='Will the Decision endanger or cause harm to my economics (welfare)?'>Решение создаст угрозу или причинит вред моей экономике (благополучию, обеспеченности)?</span>
+            		                <span class='trs' id='q2-Economics'
+            		                l_ua='Рішення допоможе укріпити мою економіку (благополуччя, забезпеченість)?'
+            		                l_en='Will the Decision help to strengthen my economics (welfare)?'>Решение поможет укрепить мою экономику (благополучие, обеспеченность)?</span>
             		            </div>
             		        </div>
             		        
@@ -179,10 +227,16 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Science'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Science' voted='0' src='img/elements/Наука.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Science' voted='0' src='img/elements/Наука.jpg' l_ru='Наука' l_ua='Наука' l_en='Science'>
             		            <div style='display: none'>
-            		                <span id='q1-Science'>Не идёт ли Решение против моих представлений о науке, научности, научному подходу, т.е. не является ли оно научно необоснованным?</span>
-            		                <span id='q2-Science'>Соответствует ли Решение моим представлениям о науке, научности, научному подходу, т.е. является ли оно научно обоснованным?</span>
+            		                <span class='trs' id='q1-Science'
+            		                l_ua='Рішення йде проти моїх уявлень про науку і науковий підхід, тобто воно є з моєї точки зору науково необґрунтованим?'
+            		                l_en='Will the Decision contrary to my perceptions of science and scientific approach (is it scientifically baseless from my point of view)?'>
+            		                Решение идёт против моих представлений о науке и научному подходу, т.е. оно является с моей точки зрения научно необоснованным?</span>
+            		                <span class='trs' id='q2-Science'
+            		                l_ua='Рішення відповідає моїм уявленням про науку і науковий підхід, тобто воно є з моєї точки зору науково обґрунтованим?'
+            		                l_en='Will the Decision meet my perceptions of science and scientific approach (is it scientifically rigorous from my point of view)?'>
+            		                Решение соответствует моим представлениям о науке и научному подходу, т.е. оно является с моей точки зрения научно обоснованным?</span>
             		            </div>
             		        </div>
             		        
@@ -193,10 +247,14 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Duty'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Duty' voted='0' src='img/elements/Долг.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Duty' voted='0' src='img/elements/Долг.jpg' l_ru='Долг' l_ua="Моральний обов'язок" l_en='Duty'>
             		            <div style='display: none'>
-            		                <span id='q1-Duty'>Не идёт ли Решение против моих представлений о выполнении моего долга?</span>
-            		                <span id='q2-Duty'>Соответствует ли Решение моим представлениям о выполнении моего долга, служит ли оно их воплощению?</span>
+            		                <span class='trs' id='q1-Duty'
+            		                l_ua="Рішення йде проти моїх уявлень про виконання мого морального обов'язку?"
+            		                l_en='Will the Decision contrary to my perceptions of my moral duty?'>Решение идёт против моих представлений о выполнении моего долга?</span>
+            		                <span class='trs' id='q2-Duty'
+            		                l_ua="Рішення відповідає моїм уявленням про виконання мого морального обов'язку, слугує їх втіленню?"
+            		                l_en='Will the Decision meet my perceptions of my moral duty?'>Решение соответствует моим представлениям о выполнении моего долга, служит их воплощению?</span>
             		            </div>
             		        </div>
             		        
@@ -207,10 +265,14 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Equity'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Equity' voted='0' src='img/elements/Справедливость.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Equity' voted='0' src='img/elements/Справедливость.jpg' l_ru='Справедливость' l_ua='Справедливість' l_en='Equity'>
             		            <div style='display: none'>
-            		                <span id='q1-Equity'>Не идёт ли Решение против моих представлений о справедливости?</span>
-            		                <span id='q2-Equity'>Соответствует ли это Решение моим представлениям о справедливости, служит ли оно их воплощению?</span>
+            		                <span class='trs' id='q1-Equity'
+            		                l_ua='Рішення йде проти моїх уявлень про справедливість?'
+            		                l_en='Will the Decision contrary to my perceptions of equity?'>Решение идёт против моих представлений о справедливости?</span>
+            		                <span class='trs' id='q2-Equity'
+            		                l_ua='Рішення відповідає моїм уявленням про справедливість, слугує їх втіленню?'
+            		                l_en='Will the Decision meet my perceptions of equity and serve to their implement?'>Решение соответствует моим представлениям о справедливости, служит их воплощению?</span>
             		            </div>
             		        </div>
             		        
@@ -221,10 +283,14 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Legality'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Legality' voted='0' src='img/elements/Правомерность.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Legality' voted='0' src='img/elements/Правомерность.jpg' l_ru='Правомерность' l_ua='Правомірність' l_en='Legality'>
             		            <div style='display: none'>
-            		                <span id='q1-Legality'>Не нарушит ли выполнение Решения правомерность моих действий?</span>
-            		                <span id='q2-Legality'>Сделает ли Решение мои действия более правомерными?</span>
+            		                <span class='trs' id='q1-Legality'
+            		                l_ua='Рішення порушить правомірність моїх дій?'
+            		                l_en='Will the Decision disrupt legality of my actions?'>Решение нарушит правомерность моих действий?</span>
+            		                <span class='trs' id='q2-Legality'
+            		                l_ua='Рішення зробить мої дії більш правомірними?'
+            		                l_en='Will the Decision make my actions more legal?'>Решение сделает мои действия более правомерными?</span>
             		            </div>
             		        </div>
             		        
@@ -235,10 +301,14 @@
             	        <div class='div_of_element_outer'>
             		        <div class='div_of_element'>
             		            <div class='element_background hidden' id='back_Authority'></div>
-            		            <img class='element_picture canonic_border no_select' id='elem_Authority' voted='0' src='img/elements/Авторитет.jpg' id=''>
+            		            <img class='element_picture canonic_border no_select' id='elem_Authority' voted='0' src='img/elements/Авторитет.jpg' l_ru='Авторитет' l_ua='Авторитет' l_en='Authority'>
             		            <div style='display: none'>
-            		                <span id='q1-Authority'>Не подорвёт ли Решение мой авторитет в обществе?</span>
-            		                <span id='q2-Authority'>Укрепит ли Решение мой авторитет в обществе?</span>
+            		                <span class='trs' id='q1-Authority'
+            		                l_ua='Рішення підірве мій авторитет у соціумі?'
+            		                l_en='Will the Decision disrupt my authority in society?'>Решение подорвёт мой авторитет в обществе?</span>
+            		                <span class='trs' id='q2-Authority'
+            		                l_ua='Рішення укріпить мій авторитет у соціумі?'
+            		                l_en='Will the Decision strengthen my authority in society?'>Решение укрепит мой авторитет в обществе?</span>
             		            </div>
             		        </div>
             		        
@@ -262,15 +332,15 @@
             		        
             		        <div style='padding: 24px;'>
             			        <p id='plv_question_1' class='text_question' style=''>Вопрос_1</p>
-            			        <span class='btn_long_voting btn_plv_answer anim_mouseover' id='btn_plv_answer_q1_yes' my_oppo='btn_plv_answer_q1_no' myval='yes'>ДА</span>
-            			        <span class='btn_long_voting btn_plv_answer anim_mouseover' id='btn_plv_answer_q1_no' my_oppo='btn_plv_answer_q1_yes' myval='no'>НЕТ</span>
+            			        <span class='btn_long_voting btn_plv_answer anim_mouseover trs' id='btn_plv_answer_q1_yes' my_oppo='btn_plv_answer_q1_no' myval='yes' l_ua='ТАК' l_en='YES'>ДА</span>
+            			        <span class='btn_long_voting btn_plv_answer anim_mouseover trs' id='btn_plv_answer_q1_no' my_oppo='btn_plv_answer_q1_yes' myval='no' l_ua='НІ' l_en='NO'>НЕТ</span>
             			        
             			        <p id='plv_question_2' class='text_question' style='margin-top: 24px'>Вопрос_2</p>
-            			        <span class='btn_long_voting btn_plv_answer anim_mouseover' id='btn_plv_answer_q2_yes' my_oppo='btn_plv_answer_q2_no' myval='yes'>ДА</span>
-            			        <span class='btn_long_voting btn_plv_answer anim_mouseover' id='btn_plv_answer_q2_no' my_oppo='btn_plv_answer_q2_yes' myval='no'>НЕТ</span>
+            			        <span class='btn_long_voting btn_plv_answer anim_mouseover trs' id='btn_plv_answer_q2_yes' my_oppo='btn_plv_answer_q2_no' myval='yes' l_ua='ТАК' l_en='YES'>ДА</span>
+            			        <span class='btn_long_voting btn_plv_answer anim_mouseover trs' id='btn_plv_answer_q2_no' my_oppo='btn_plv_answer_q2_yes' myval='no' l_ua='НІ' l_en='NO'>НЕТ</span>
             			        
             			        <div style='margin-top: 18px'>
-            			            <span class='btn_long_voting anim_mouseover' id='btn_end_plv' style='visibility: hidden; width: auto'>позиция сформирована</span>
+            			            <span class='btn_long_voting anim_mouseover trs' id='btn_end_plv' style='visibility: hidden; width: auto' l_ua='позиція сформована' l_en='position is ready'>позиция сформирована</span>
             			        </div>
             		        </div>
             		    </div>
@@ -285,10 +355,15 @@
             	    
             	    <!-- кнопка подсчёта и дополнительные тексты -->
             	    <div id='div_prelast' class='' style='margin: 60px 0px 0px 0px'>
-            	        <p id='txt_contradictions_detected' class='hidden'>Есть элементы, по обоим вопросам которых даны ответы "да" (выделены <b style='color: #f4a60b'>жёлтым</b>).<br>
+            	        <p class='hidden trs' id='txt_contradictions_detected'
+            	        l_ua='Є елементи, на обидва питання яких дані відповіді "так" (виділені <b style="color: #f4a60b">жовтим</b>).<br>Це стан внутрішнього протиріччя, яке треба зняти.<br>
+            	        Необхідно врешті-решт відповісти інакше, щоб отримати доступ до результатів голосування.'
+            	        l_en='There are Elements with answers "yes" on both questions (highlighted in <b style="color: #f4a60b">yellow</b>).<br>This is state of inner contradiction.<br>
+            	        You need finally ask them differently in order to get access to the results of voting.'>
+            	        Есть элементы, по обоим вопросам которых даны ответы "да" (выделены <b style='color: #f4a60b'>жёлтым</b>).<br>Это состояние внутреннего противоречия, которое нужно снять.<br>
             	        Необходимо в конечном итоге ответить иначе, чтобы получить доступ к результатам голосования.</p>
             	        
-            	        <span class='btn_simple btn_simple_available hidden' id='btn_calculate_votes'>подсчитать голоса</span><br>
+            	        <span class='btn_simple btn_simple_available hidden trs' id='btn_calculate_votes' l_ua='підрахувати голоси' l_en='count votes'>подсчитать голоса</span><br>
             	    </div>
             	    
             	    
@@ -313,15 +388,15 @@
         // страница загружена:
         $(document).ready(function(){
             $('html, body').animate({ scrollTop: 0 }, 200);
+            
+            change_language('l_ua');
         });
         
         // курсор наведён на элемент:
         $('.element_picture').mouseover(function(){
             
-            let a = $(this).attr('src');
-            a = a.replace(/img\/elements\//, '');
-            a = a.replace(/\.jpg/, '');
-        	$('#tip_element_name').text(a);
+            let lang = $('#var_language').text();
+        	$('#tip_element_name').text( $(this).attr('l_'+lang) );
         });
         
         // курсор вышел из элемента:
@@ -332,7 +407,7 @@
         
         
         // клик - переход к голосованию:
-        $('#btn_toggle_voting_process').click(function(){
+        $('.btn_toggle_voting_process').click(function(){
             
             // в любом случае спрятать кнопку подсчёта голосов:
             $('#btn_calculate_votes').addClass('hidden');
@@ -342,7 +417,8 @@
                 
                 $('#div_helper_voting').removeClass('hidden');
                 
-                $(this).text('прервать голосование');
+                $(this).addClass('hidden');
+                $('#btn_voting_break').removeClass('hidden');
                 
                 // показать изображения-подсказки:
                 $('.img_tip_leftclick').removeClass('hidden');
@@ -392,7 +468,8 @@
                 
                 $('#var_current_procedure').text('none');
                 
-                $(this).text('начать голосование');
+                $(this).addClass('hidden');
+                $('#btn_voting_begin').removeClass('hidden');
             }
         });
         
@@ -453,9 +530,10 @@
     	            $('#txt_title_of_element_voting').text( title );
     	            $('#img_of_element_voting').attr( 'src', src );
     	        
-    	        // выставить вопросы:
-        	        $('#plv_question_1').text( $('#q1-'+elem_id).text() );
-        	        $('#plv_question_2').text( $('#q2-'+elem_id).text() );
+    	        // выставить вопросы на соответствующем языке:
+    	            let lang = $('#var_language').text();
+        	        $('#plv_question_1').text( $('#q1-'+elem_id).attr('l_'+lang) );
+        	        $('#plv_question_2').text( $('#q2-'+elem_id).attr('l_'+lang) );
     	        
     	        $('#div_panel_long_voting').attr('answer_1', 'not_provided');
     	        $('#div_panel_long_voting').attr('answer_2', 'not_provided');
@@ -666,6 +744,13 @@
         // клик - подсчитать голоса:
         $('#btn_calculate_votes').click(function(){
             
+            let lang = $('#var_language').text();
+            
+            let f_answer_ye, f_answer_no, f_vote_ye, f_vote_no, f_vote_re, f_votes_ye, f_votes_no, f_votes_re;
+            if( lang == 'ru' ){ f_answer_ye = 'да'; f_answer_no = 'не'; f_vote_ye = 'ЗА'; f_vote_no = 'ПРОТИВ'; f_vote_re = 'УДЕРЖ.'; f_votes_ye = 'голосов "за"'; f_votes_no = 'голосов "против"'; f_votes_re = 'голосов "удерж."'; }
+            if( lang == 'ua' ){ f_answer_ye = 'так'; f_answer_no = 'ні'; f_vote_ye = 'ЗА'; f_vote_no = 'ПРОТИ'; f_vote_re = 'УТРИМ.'; f_votes_ye = 'голосів "за"'; f_votes_no = 'голосів "проти"'; f_votes_re = 'голосів "утрим."'; }
+            if( lang == 'en' ){ f_answer_ye = 'ye'; f_answer_no = 'no'; f_vote_ye = 'ENDORSE'; f_vote_no = 'AGAINST'; f_vote_re = 'REFRAIN'; f_votes_ye = 'votes "endorse"'; f_votes_no = 'votes "against"'; f_votes_re = 'votes "refrain"'; }
+            
             $(this).addClass('hidden');
             
             // закрыть панель развёрнутого голосования, если она вдруг открыта:
@@ -675,8 +760,8 @@
             $('.img_tip_leftclick').addClass('hidden');
             
             // подготовка к анализу голосов:
-                let whole_text = '';
-                let elem_name, which_vote, a_1, a_2, current_row, verdict;
+                let table_of_votes_content = '';
+                let elem_name, which_vote, a_1, a_2, current_row, text_verdict;
                 let cnt_ye = 0;
                 let cnt_no = 0;
                 let cnt_re = 0;
@@ -686,63 +771,63 @@
             // для каждого элемента:
             $('.element_picture').each(function(i){
                 
-                elem_name = $('.element_picture:eq('+i+')').attr('src');
-                elem_name = elem_name.replace(/img\/elements\//, '');
-                elem_name = elem_name.replace(/\.jpg/, '');
+        	    elem_name = $('.element_picture:eq('+i+')').attr('l_'+lang);
                 
                 which_vote = $('.element_picture:eq('+i+')').attr('vote');
-                if( which_vote == 'yes' ){ which_vote = 'ЗА'; cnt_ye++; show_to = cnt_ye; }
-                if( which_vote == 'no' ){ which_vote = 'ПРОТИВ'; cnt_no++; show_to = cnt_no; }
-                if( which_vote == 'refr' ){ which_vote = 'УДЕРЖ.'; cnt_re++; show_to = cnt_re; }
+                if( which_vote == 'yes' ){      which_vote = '<span class="vote_ye">'+f_vote_ye+'</span>';      cnt_ye++; show_to = cnt_ye; }
+                if( which_vote == 'no' ){       which_vote = '<span class="vote_no">'+f_vote_no+'</span>';       cnt_no++; show_to = cnt_no; }
+                if( which_vote == 'refr' ){     which_vote = '<span class="vote_re">'+f_vote_re+'</span>';     cnt_re++; show_to = cnt_re; }
                 
                 
-                if( $('.element_picture:eq('+i+')').attr('answer_1') == 'yes' ){ a_1 = 'да'; }
-                if( $('.element_picture:eq('+i+')').attr('answer_1') == 'no' ){ a_1 = 'не'; }
+                if( $('.element_picture:eq('+i+')').attr('answer_1') == 'yes' ){ a_1 = f_answer_ye; }
+                if( $('.element_picture:eq('+i+')').attr('answer_1') == 'no' ){ a_1 = f_answer_no; }
                 
-                if( $('.element_picture:eq('+i+')').attr('answer_2') == 'yes' ){ a_2 = 'да'; }
-                if( $('.element_picture:eq('+i+')').attr('answer_2') == 'no' ){ a_2 = 'не'; }
+                if( $('.element_picture:eq('+i+')').attr('answer_2') == 'yes' ){ a_2 = f_answer_ye; }
+                if( $('.element_picture:eq('+i+')').attr('answer_2') == 'no' ){ a_2 = f_answer_no; }
                 
                 let img_url = $('.element_picture:eq('+i+')').attr('src');
                 let img_td = '<img class="canonic_border no_select" style="width: 16px" src="' + img_url + '">';
                 current_row = '<tr><td>' + img_td + '</td><td>' + elem_name + '</td><td></td><td></td><td>' + a_1+'/'+a_2 + '</td><td></td><td>></td><td>' + which_vote + '</td></tr>';
-                            //console.log('current_row: ' + current_row);
                 
-                whole_text = whole_text + current_row;
+                table_of_votes_content += current_row;
             });
             
-            let table_1 = '<table class="table_voting_results">' + whole_text + '</table>';
+            let table_of_votes = '<table class="table_voting_results">' + table_of_votes_content + '</table>';
             
             
             // подсчёт голосов:
-                let counting = `<tr><td>голосов "за": </td><td>` + cnt_ye + `</td></tr>
-                <tr><td>голосов "против": </td><td>` + cnt_no + `</td></tr>
-                <tr><td>голосов "удерж.": </td><td>` + cnt_re + `</td></tr>`;
+                let text_sums_of_votes = `
+                <div class="div_flex_verdict"><div><p class="voting_results">` + f_votes_ye + `:</p></div><div><p class="voting_results vote_ye">` + cnt_ye + `</p></div></div>
+                <div class="div_flex_verdict"><div><p class="voting_results">` + f_votes_no + `:</p></div><div><p class="voting_results vote_no">` + cnt_no + `</p></div></div>
+                <div class="div_flex_verdict"><div><p class="voting_results">` + f_votes_re + `:</p></div><div><p class="voting_results vote_re">` + cnt_re + `</p></div></div>`;
                 
-                whole_text = '<tr><td style="padding-bottom: 24px"></td></tr>' + counting;
+                text_sums_of_votes = `<div style='margin: 24px 0px 24px 0px; width: 240px'>` + text_sums_of_votes + '</div>';
             
             
             // вердикт:
                 // если голосов "ЗА" больше, чем голосов "ПРОТИВ":
                 if( cnt_ye > cnt_no ){
-                    verdict = `<tr><td>Голосов "за" больше, чем голосов "против".<br><br>Итак, решение допускается.</td></tr>`;
+                    if( lang == 'ru' ){ text_verdict = `<p class="voting_results">Голосов "за" больше, чем голосов "против".<br><br>Итак, решение допускается.</p>`; }
+                    if( lang == 'ua' ){ text_verdict = `<p class="voting_results">Голосів "за" більше, ніж голосів "проти".<br><br>Отже, рішення допускається.</p>`; }
+                    if( lang == 'en' ){ text_verdict = `<p class="voting_results">There are more votes "endorse" than votes "against".<br><br>So, the Decision is permitted.</p>`; }
                 }
                 
                 // если голосов "ЗА" меньше, чем голосов "ПРОТИВ":
                 if( cnt_ye < cnt_no ){
-                    verdict = `<tr><td>Голосов "за" меньше, чем голосов "против".<br><br>Итак, решение <span class='font_semibold'>не</span> допускается.</td></tr>`;
+                    if( lang == 'ru' ){ text_verdict = `<p class="voting_results">Голосов "за" меньше, чем голосов "против".<br><br>Итак, решение <span class='font_semibold'>не</span> допускается.</p>`; }
+                    if( lang == 'ua' ){ text_verdict = `<p class="voting_results">Голосів "за" менше, ніж голосів "проти".<br><br>Отже, рішення <span class='font_semibold'>не</span> допускається.</p>`; }
+                    if( lang == 'en' ){ text_verdict = `<p class="voting_results">There are more votes "against" than votes "endorse".<br><br>So, the Decision is <span class='font_semibold'>not</span> permitted.</p>`; }
                 }
                 
                 // если голосов "ЗА" столько же, сколько и голосов "ПРОТИВ":
                 if( cnt_ye == cnt_no ){
-                    verdict = `<tr><td>Голосов "за" столько же, сколько и голосов "против".<br><br>Итак, решение <span class='font_semibold'>не</span> допускается.</td></tr>`;
+                    if( lang == 'ru' ){ text_verdict = `<p class="voting_results">Голосов "за" столько же, сколько и голосов "против".<br><br>Итак, решение <span class='font_semibold'>не</span> допускается.</p>`; }
+                    if( lang == 'ua' ){ text_verdict = `<p class="voting_results">Голосів "за" стільки ж, скільки й голосів "проти".<br><br>Отже, рішення <span class='font_semibold'>не</span> допускається.</p>`; }
+                    if( lang == 'en' ){ text_verdict = `<p class="voting_results">There are as many votes "endorse" as there are votes "against".<br><br>So, the Decision is <span class='font_semibold'>not</span> permitted.</p>`; }
                 }
-                
-                whole_text = whole_text + '<tr><td style="padding-bottom: 24px"></td></tr>' + verdict;
-            
-            let table_2 = '<table class="table_voting_results">' + whole_text + '</table>';
             
             
-            $('#voting_results').html(table_1 + table_2);
+            $('#voting_results').html(table_of_votes + text_sums_of_votes + text_verdict);
             toggle_div_results_visibility(true);
             
             scroll_page_down();
@@ -786,25 +871,68 @@
                 elem_id = $('.element_picture:eq('+i+')').attr('id');
                 elem_id = elem_id.replace(/elem_/g, '');
                 
-                rnd = get_random_int_between_ints(0, 8);
+                rnd = get_random_int_between_ints(0, 2);
                 
-                if( rnd <= 3 ){
+                if( rnd == 0 ){
                     answer_1 = 'yes';
                     answer_2 = 'no';
                 }
                 
-                if( rnd >= 4 && rnd <= 6 ){
+                if( rnd == 1 ){
                     answer_1 = 'no';
                     answer_2 = 'yes';
                 }
                 
-                if( rnd >= 7 ){
+                if( rnd == 2 ){
                     answer_1 = 'no';
                     answer_2 = 'no';
                 }
                 
                 evaluate_answers(elem_id, answer_1, answer_2)
             });
+        }
+        
+        
+        // клик - смена языка:
+        $('body').on('click', '.btns_language', function(event){
+            
+            let to_lang = $(this).attr('to_lang');
+            change_language(to_lang);
+        });
+        
+        
+        var language_changed = false;
+        
+        
+        // функция - смена языка:
+        function change_language(to_lang){
+            
+            let to_lang_val = to_lang.replace(/l_/, '');
+            $('#var_language').text(to_lang_val);
+            
+            // если смена языка идёт в первый раз за сеанс, сохранить текущие значения как l_ru:
+            if( !language_changed ){
+                            //console.log('saving ".trs" texts into "l_ru" attr');
+                
+                let text_ru;
+                $('.trs').each(function(i){
+                
+                    text_ru = $('.trs:eq('+i+')').text();
+                    $('.trs:eq('+i+')').attr('l_ru', text_ru);
+                });
+                
+                language_changed = true;
+            }
+            
+            let new_text;
+            $('.trs').each(function(i){
+                
+                new_text = $('.trs:eq('+i+')').attr(to_lang);
+                $('.trs:eq('+i+')').html(new_text);
+            });
+            
+            $('.btns_language').addClass('btns_language_0').removeClass('btns_language_1');
+			$('.btns_language[to_lang='+to_lang+']').addClass('btns_language_1').removeClass('btns_language_0');
         }
         
         
