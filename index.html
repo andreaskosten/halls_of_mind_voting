@@ -5,7 +5,7 @@
     <link rel='shortcut icon' href='logo.png'>
     <meta http-equiv='Cache-Control' content='private' charset='utf-8'>
     
-    <link rel='stylesheet' type='text/css' href='css/main.css?0723'>
+    <link rel='stylesheet' type='text/css' href='css/main.css?0724'>
     <link rel='stylesheet' type='text/css' href='css/fonts.css?0723'>
     
     <script type='text/javascript' src='jquery-3.5.0.min.js'></script>
@@ -18,7 +18,7 @@
     <style>
     
     /* CSS Grid */
-    body { 
+    body {
         display: grid;
         grid-template-areas: 
         "header header header"
@@ -64,7 +64,7 @@
     	<div style='display: block; width: 100%' align='center'>
             
             <div style='margin: 32px 0px 32px 64px' align='left'>
-                <a class='buttons_with_text anim_mouseover' id='btn_show_info' onclick='$("#div_info").removeClass("hidden"); $(this).addClass("hidden");'>узнать больше</a>
+                <span class='btn_simple btn_simple_available' id='btn_show_info' onclick='$("#div_info").removeClass("hidden"); $(this).addClass("hidden");'>узнать больше</span>
             </div>
             
             <div id='div_info' class='hidden' style='margin: 12px 64px 12px 64px; background-color: #fafafa; padding: 18px;' align='left'>
@@ -80,7 +80,7 @@
             </div>
             
     	    <div style='margin: 24px 0px 24px 64px' align='left'>
-                <a class='buttons_with_text anim_mouseover' id='btn_toggle_voting_process'>начать голосование</a>
+                <span class='btn_simple btn_simple_available' id='btn_toggle_voting_process'>начать голосование</span>
             </div>
             
             <div id='div_helper_voting' class='hidden' style='margin: 24px 0px 0px 64px' align='left'>
@@ -89,7 +89,7 @@
                     <div><img class='no_select' style='width: 32px' src='img/tip_mouse_leftclick.png'></div>
                 </div>
                 
-                <a class='buttons_with_text anim_mouseover' onclick='simulate_full_voting();'>симулировать голосование всех элементов</a>
+                <span class='btn_simple btn_simple_available' onclick='simulate_full_voting();'>симулировать голосование всех элементов</span>
             </div>
             
             <div style='display: none; margin: 24px 0px 0px 64px'>
@@ -288,12 +288,12 @@
             	        <p id='txt_contradictions_detected' class='hidden'>Есть элементы, по обоим вопросам которых даны ответы "да" (выделены <b style='color: #f4a60b'>жёлтым</b>).<br>
             	        Необходимо в конечном итоге ответить иначе, чтобы получить доступ к результатам голосования.</p>
             	        
-            	        <a class='buttons_with_text hidden' id='btn_calculate_votes'>подсчитать голоса</a><br>
+            	        <span class='btn_simple btn_simple_available hidden' id='btn_calculate_votes'>подсчитать голоса</span><br>
             	    </div>
             	    
             	    
             	    <!-- панель с результатами -->
-            	    <div id='div_voting_results' class='hidden canonic_border' style='margin: 24px 32px 100px 32px; padding: 18px 0px 18px 0px'>
+            	    <div id='div_voting_results' class='hidden canonic_border' style='margin: 24px 32px 50px 32px; padding: 18px 0px 18px 0px'>
                         <div id='voting_results' style='color: #444444; text-align: left; padding: 12px 24px 12px 24px; font-family: "font_normal"'></div>
                     </div>
             	</div>
